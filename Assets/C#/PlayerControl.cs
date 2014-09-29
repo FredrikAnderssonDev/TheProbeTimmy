@@ -51,6 +51,7 @@ public class PlayerControl : MonoBehaviour {
 		switch(color){
 		case PlayerColor.RED:
 			gameObject.GetComponent<SpriteRenderer>().sprite = redProbe;
+			GM.SendMessage("RemoveCollision",gameObject.collider2D);
 			break;
 
 		case PlayerColor.WHITE:

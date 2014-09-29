@@ -13,7 +13,6 @@ public class Level1Handler : MonoBehaviour {
 	bool levelDone = false;
 
 	void Start(){
-		Debug.Log("hej");
 		health = 100;
 		// The middle of the screen
 		posEndScreen.x = Screen.width/2;
