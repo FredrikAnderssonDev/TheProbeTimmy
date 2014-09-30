@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
 	public Sprite redProbe;
 	public Sprite whiteProbe;
 	//PlayerColor playerColor {get; private set;} // The palyers color
+	public bool levelDone {set; get;}
 
 	// Initialization
 	void Start () {
@@ -23,7 +24,11 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// If the player is dead, do not move it
-		if(health <= 0) return;
+		if(health <= 0 || levelDone){
+			Debug.Log("asd");
+			rigidbody2D.velocity = new Vector3(0,0,0);
+			return;
+		}
 
 		// The player controls
 		if(Input.GetMouseButton(0)){

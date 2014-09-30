@@ -11,7 +11,11 @@ public class GameSetup : MonoBehaviour {
 	public BoxCollider2D rightWall;
 
 	public Transform player;
-	
+	public GUISkin theSkin;
+	string header = "The Probe Timmy";
+	public int offset;
+	int orginalSize;
+
 	void Start () {
 		// Make walls on the edge of the screen
 		topWall.size = new Vector2(mainCam.ScreenToWorldPoint (new Vector3 (Screen.width * 2f,0f,0f)).x , 1f);
@@ -26,13 +30,16 @@ public class GameSetup : MonoBehaviour {
 		rightWall.size = new Vector2(1f, mainCam.ScreenToWorldPoint (new Vector3 (0f,Screen.height * 2f,0f)).y);
 		rightWall.center = new Vector2( mainCam.ScreenToWorldPoint (new Vector3 (Screen.width, 0f, 0f)).x + 0.5f, 0f);
 
-		player.position = new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0f, 0f)).x,
+		/*player.position = new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0f, 0f)).x,
 		                              mainCam.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2f, 0f)).y,
-		                              0f);
+		                              0f);*/
+
+		offset = 80;
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnGUI(){
+		GUI.skin = theSkin;
+		GUI.Label(new Rect(0, 0, Screen.width, 100), header);
 	}
 }
