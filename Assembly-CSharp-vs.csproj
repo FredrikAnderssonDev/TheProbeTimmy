@@ -46,16 +46,27 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\C#\Buttons\ExitButton.cs" />
+     <Compile Include="Assets\C#\Buttons\HighScoreButton.cs" />
+     <Compile Include="Assets\C#\Buttons\Level1Button.cs" />
+     <Compile Include="Assets\C#\Buttons\Level2Button.cs" />
+     <Compile Include="Assets\C#\Buttons\LevelButton.cs" />
+     <Compile Include="Assets\C#\Buttons\MainMenuButton.cs" />
+     <Compile Include="Assets\C#\Buttons\NewGameButton.cs" />
      <Compile Include="Assets\C#\EndGoalBall.cs" />
-     <Compile Include="Assets\C#\GameSetup.cs" />
      <Compile Include="Assets\C#\GlowingBall.cs" />
      <Compile Include="Assets\C#\HelpProbe.cs" />
-     <Compile Include="Assets\C#\Level1Handler.cs" />
-     <Compile Include="Assets\C#\Level2Handler.cs" />
-     <Compile Include="Assets\C#\NewGameButton.cs" />
+     <Compile Include="Assets\C#\IntroGM.cs" />
+     <Compile Include="Assets\C#\LaserCollider.cs" />
+     <Compile Include="Assets\C#\LevelHandlers\GameSetup.cs" />
+     <Compile Include="Assets\C#\LevelHandlers\HighScoreList.cs" />
+     <Compile Include="Assets\C#\LevelHandlers\Level2Handler.cs" />
+     <Compile Include="Assets\C#\LevelHandlers\Level3Handler.cs" />
+     <Compile Include="Assets\C#\LevelHandlers\LevelHandler.cs" />
      <Compile Include="Assets\C#\PlayerControl.cs" />
      <Compile Include="Assets\C#\RedBall.cs" />
      <Compile Include="Assets\C#\WallCollision.cs" />
+     <None Include="Assets\Dark Future\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

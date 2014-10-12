@@ -25,7 +25,6 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		// If the player is dead, do not move it
 		if(health <= 0 || levelDone){
-			Debug.Log("asd");
 			rigidbody2D.velocity = new Vector3(0,0,0);
 			return;
 		}
@@ -42,8 +41,14 @@ public class PlayerControl : MonoBehaviour {
 
 	// Deal damage to the player
 	public void DamagePlayer(int dmg){
-		health = health - dmg;
+		health = health - dmg < 0 ? 0 : health - dmg;
+		audio.Play();
 		GM.SendMessage("UpdatePlayerHealth",health);
+	}
+
+	// Set the palyers health to zero
+	public void KillPlayer(){
+		DamagePlayer(health);
 	}
 
 	// Heal the player
