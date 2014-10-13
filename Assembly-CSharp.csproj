@@ -50,6 +50,7 @@
      <Compile Include="Assets\C#\Buttons\HighScoreButton.cs" />
      <Compile Include="Assets\C#\Buttons\Level1Button.cs" />
      <Compile Include="Assets\C#\Buttons\Level2Button.cs" />
+     <Compile Include="Assets\C#\Buttons\Level3Buttom.cs" />
      <Compile Include="Assets\C#\Buttons\LevelButton.cs" />
      <Compile Include="Assets\C#\Buttons\MainMenuButton.cs" />
      <Compile Include="Assets\C#\Buttons\NewGameButton.cs" />

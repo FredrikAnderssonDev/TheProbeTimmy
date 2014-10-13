@@ -12,7 +12,7 @@ public class Level2Handler : LevelHandler {
 	}
 
 	// Removes the collision between the laser and the player
-	public void RemoveCollision(Collider2D col){
+	public void RemoveRedCollision(Collider2D col){
 		Physics2D.IgnoreCollision(col,redLaser.collider2D);
 	}
 }

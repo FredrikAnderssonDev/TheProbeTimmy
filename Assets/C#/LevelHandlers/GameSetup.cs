@@ -36,7 +36,7 @@ public class GameSetup : MonoBehaviour {
 		offset = 80;
 
 		// Set the number of levels
-		PlayerPrefs.SetInt("NumberOfLevels",2);
+		PlayerPrefs.SetInt("NumberOfLevels",3);
 	}
 	
 	void OnGUI(){
