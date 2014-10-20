@@ -56,6 +56,7 @@
      <Compile Include="Assets\C#\Buttons\NewGameButton.cs" />
      <Compile Include="Assets\C#\EndGoalBall.cs" />
      <Compile Include="Assets\C#\GlowingBall.cs" />
+     <Compile Include="Assets\C#\GreenWall.cs" />
      <Compile Include="Assets\C#\HelpProbe.cs" />
      <Compile Include="Assets\C#\IntroGM.cs" />
      <Compile Include="Assets\C#\LaserCollider.cs" />
@@ -65,7 +66,9 @@
      <Compile Include="Assets\C#\LevelHandlers\Level3Handler.cs" />
      <Compile Include="Assets\C#\LevelHandlers\LevelHandler.cs" />
      <Compile Include="Assets\C#\PlayerControl.cs" />
+     <Compile Include="Assets\C#\PurpleBall.cs" />
      <Compile Include="Assets\C#\RedBall.cs" />
+     <Compile Include="Assets\C#\RedWall.cs" />
      <Compile Include="Assets\C#\WallCollision.cs" />
      <None Include="Assets\Dark Future\ReadMe.txt" />
   </ItemGroup>

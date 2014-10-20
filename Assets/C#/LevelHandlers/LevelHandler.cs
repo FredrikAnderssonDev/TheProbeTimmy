@@ -9,7 +9,7 @@ public class LevelHandler : MonoBehaviour {
 	public Vector2 posEndScreen;
 	public GUISkin theSkin;
 
-	int health; // Players health
+	protected int health; // Players health
 	bool levelDone = false;
 	float time;
 	int playerScore;
@@ -17,12 +17,12 @@ public class LevelHandler : MonoBehaviour {
 	bool newHighScore;
 
 	protected void Start(){
-		health = 100;
+		health = 20;
 		time = 0.0f;
 		// The middle of the screen
 		posEndScreen.x = Screen.width/2;
 		posEndScreen.y = Screen.height/2;
-		hasNextLevel = PlayerPrefs.GetInt("numberOfLevels") > Application.loadedLevel + 1 ? true : false;
+		hasNextLevel = PlayerPrefs.GetInt("NumberOfLevels") > Application.loadedLevel + 1;
 		newHighScore = false;
 	}
 
@@ -78,7 +78,7 @@ public class LevelHandler : MonoBehaviour {
 		}
 	}
 
-	void Update(){
+	protected void Update(){
 		time = time + Time.deltaTime;
 	}
 

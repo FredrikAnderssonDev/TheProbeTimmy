@@ -22,7 +22,7 @@ public class HighScoreList : MonoBehaviour {
 
 	void OnGUI () {
 		GUI.skin = theSkin;
-		// Draw the end screen
+		// Draw the high scores
 		GUI.backgroundColor = Color.blue;
 		GUILayout.BeginArea (new Rect (posEndScreen.x-100, posEndScreen.y-100, 200, 200));
 		GUILayout.BeginVertical();

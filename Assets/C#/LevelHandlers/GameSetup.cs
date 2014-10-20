@@ -29,9 +29,6 @@ public class GameSetup : MonoBehaviour {
 		rightWall.size = new Vector2(1f, mainCam.ScreenToWorldPoint (new Vector3 (0f,Screen.height * 2f,0f)).y);
 		rightWall.center = new Vector2( mainCam.ScreenToWorldPoint (new Vector3 (Screen.width, 0f, 0f)).x + 0.5f, 0f);
 
-		/*player.position = new Vector3(mainCam.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0f, 0f)).x,
-		                              mainCam.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2f, 0f)).y,
-		                              0f);*/
 		// Offset of the header
 		offset = 80;
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 using UnityEditor; // For AssetsDatabase
 
-public enum PlayerColor{WHITE = 0, RED = 1};
+public enum PlayerColor{WHITE = 0, RED = 1, PURPLE = 2};
 
 public class PlayerControl : MonoBehaviour {
 
@@ -12,12 +12,14 @@ public class PlayerControl : MonoBehaviour {
 	GameObject GM; // Gamehandler
 	public Sprite redProbe;
 	public Sprite whiteProbe;
-	//PlayerColor playerColor {get; private set;} // The palyers color
+	public Sprite purpleProbe;
 	public bool levelDone {set; get;}
+	bool immortal;
 
 	// Initialization
 	void Start () {
-		health = 10;
+		health = 20;
+		immortal = false;
 		GM = GameObject.Find("_GM");
 	}
 	
@@ -41,9 +43,23 @@ public class PlayerControl : MonoBehaviour {
 
 	// Deal damage to the player
 	public void DamagePlayer(int dmg){
+		if(immortal) return;
+		immortal = true;
 		health = health - dmg < 0 ? 0 : health - dmg;
 		audio.Play();
 		GM.SendMessage("UpdatePlayerHealth",health);
+		StartCoroutine(Blink());
+	}
+
+	IEnumerator Blink(){
+		float endTime = Time.time + 2.0f;
+		while(Time.time < endTime){
+			renderer.enabled = false;
+			yield return new WaitForSeconds(0.2f);
+			renderer.enabled = true;
+			yield return new WaitForSeconds(0.2f);
+		}
+		immortal = false;
 	}
 
 	// Set the palyers health to zero
@@ -67,7 +83,11 @@ public class PlayerControl : MonoBehaviour {
 		case PlayerColor.WHITE:
 			gameObject.GetComponent<SpriteRenderer>().sprite = whiteProbe;
 			break;
-
+		case PlayerColor.PURPLE:
+			gameObject.GetComponent<SpriteRenderer>().sprite = purpleProbe;
+			GM.SendMessage("RemovePurpleCollision",gameObject.collider2D);
+			break;
 		}
 	}
+	
 }
