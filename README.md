@@ -1,6 +1,6 @@
 TheProbeTimmy
 =============
 
-A single player game
+A single player game.
 
-Just a simple game I created for a school project.
+Just a simple unity game I created for a school project.
